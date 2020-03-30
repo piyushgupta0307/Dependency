@@ -22,11 +22,22 @@ jira.searchJira(jql)
 	  var myJSON = JSON.stringify(issue);
 	  console.log("typeof "+ typeof myJSON);
       console.log('Status: ' + myJSON);
-	    fs.writeFile('data.json', myJSON, function (err) {
-  if (err) return console.log(err);
-  console.log('Hello World > data.json');
-   console.log('Status: ' + issue.fields.status.name);
-});
+	  
+	  
+	 var data='';
+for (var i = 0; i < myJSON.length; i++) {
+    data=data+myJSON[i].status+'\t'+myJSON[i].school+'\t'+myJSON[i].marks+'\n';
+ }
+fs.appendFile('Dependency.xls', data, (err) => {
+    if (err) throw err;
+    console.log('File created');
+ }); 
+	  
+	    // fs.writeFile('data.json', myJSON, function (err) {
+  // if (err) return console.log(err);
+  // console.log('Hello World > data.json');
+   // console.log('Status: ' + issue.fields.status.name);
+// });
   })
   .catch(function(err) {
     console.error(err);
