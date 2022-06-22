@@ -4,7 +4,7 @@
   "description": "jiraRest",
   "main": "index",
   "dependencies": {
-    "async": "^3.2.0",
+    "async": "^3.2.2",
     "chilkat_node6_win32": "^9.50.76",
     "fs": "0.0.1-security",
     "jira-client": "^6.15.0",
